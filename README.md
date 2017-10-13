@@ -16,7 +16,7 @@ This specialization includes five courses:
 
 ### 1. Front-End Web UI Frameworks and Tools: Bootstrap 4
 
-![](https://i.imgur.com/6mUD3ot.png)
+![](https://i.imgur.com/fv7zbIT.png)
 
 Project builds a website for a fictional restaurant: conFusion. This website is implemented totally by bootstrap.
 
