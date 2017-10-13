@@ -30,6 +30,6 @@ There are three parts in website:
 
 ### 2. Front-End Web UI Frameworks and Tools: Bootstrap 4
 
-![](https://i.imgur.com/tn4MUs4.jpg)
+![](https://i.imgur.com/jIqCE9F.jpg)
 
 Project builds a website for a fictional restaurant: conFusion. This website is based on Angular.
