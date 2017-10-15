@@ -2,12 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { MatToolbarModule } from '@angular/material';
 import { MatListModule } from '@angular/material';
 import { MatGridListModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 import { MatIconModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material';
+import { MatSlideToggleModule } from '@angular/material';
+import { MatSelectModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -26,6 +35,7 @@ import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,21 +46,35 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+
     MatToolbarModule,
     MatListModule,
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    MatDialogModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+
     FlexLayoutModule,
     AppRoutingModule
   ],
   providers: [DishService, PromotionService],
+  entryComponents: [
+    LoginComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
