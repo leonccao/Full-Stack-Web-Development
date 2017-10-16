@@ -18,8 +18,12 @@
       </p>
     </mat-card-content>
   </mat-card>
-  <div [hidden]="dish">
+  <div [hidden]="dish || dishErrMess">
     <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+  <div *ngIf="dishErrMess">
+    <h2>Error</h2>
+    <h4>{{dishErrMess}}</h4>
   </div>
 
   <mat-card *ngIf="promotion" fxFlex>
@@ -35,8 +39,11 @@
       </p>
     </mat-card-content>
   </mat-card>
-  <div [hidden]="promotion">
+  <div [hidden]="promotion || promotionErrMess">
     <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
   </div>
-
+  <div *ngIf="promotionErrMess">
+    <h2>Error</h2>
+    <h4>{{promotionErrMess}}</h4>
+  </div>
 </div>
