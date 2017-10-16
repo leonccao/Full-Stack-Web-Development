@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { MatToolbarModule } from '@angular/material';
 import { MatListModule } from '@angular/material';
@@ -37,6 +38,9 @@ import { PromotionService } from './services/promotion.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
 
+import { baseURL } from './shared/baseurl';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +58,7 @@ import { LoginComponent } from './login/login.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpModule,
 
     MatToolbarModule,
     MatListModule,
@@ -71,7 +76,12 @@ import { LoginComponent } from './login/login.component';
     FlexLayoutModule,
     AppRoutingModule
   ],
-  providers: [DishService, PromotionService],
+  providers: [
+    DishService,
+    PromotionService,
+    {provide: 'BaseURL', useValue: baseURL},
+    ProcessHTTPMsgService
+  ],
   entryComponents: [
     LoginComponent
   ],

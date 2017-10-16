@@ -13,14 +13,17 @@
           <h3>{{ dish.name | uppercase }}</h3>
         </mat-card-title>
       </mat-card-header>
-      <img mat-card-image src="{{dish.image}}" alt="{{dish.name}}">
+      <img mat-card-image src="{{BaseURL + dish.image}}" alt="{{dish.name}}">
       <mat-card-content>
         <p>{{ dish.description }}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button (click)="goBack()">Back</button>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+          <button mat-button [routerLink]="['/dishdetail', prev]"><span class="fa fa-chevron-left fa-lg"></span></button>
+          <button mat-button (click)="goBack()">BACK</button>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+          <span class="flex-spacer"></span>
+          <button mat-button [routerLink]="['/dishdetail', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
       </mat-card-actions>
     </mat-card>
   </div>

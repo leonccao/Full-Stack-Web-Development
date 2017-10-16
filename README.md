@@ -1,4 +1,4 @@
-# Projects for Full Stack Web and Multiplatform Mobile App Development Specialization
+# Projects for \<Full Stack Web and Multiplatform Mobile App Development Specialization\>
 
 Here are the in-class projects for  Full Stack Web and Multiplatform Mobile App Development Specialization courses on Coursera.
 
@@ -28,7 +28,7 @@ There are three parts in website:
 
 ---
 
-### 2. Front-End Web UI Frameworks and Tools: Bootstrap 4
+### 2. Front-End JavaScript Frameworks: Angular
 
 ![](https://i.imgur.com/jIqCE9F.jpg)
 
