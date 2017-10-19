@@ -20,6 +20,7 @@ import { MatCheckboxModule } from '@angular/material';
 import { MatSlideToggleModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material';
+import { MatSliderModule } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -76,6 +77,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     MatSlideToggleModule,
     MatSelectModule,
     MatProgressSpinnerModule,
+    MatSliderModule,
 
     FlexLayoutModule,
     AppRoutingModule
