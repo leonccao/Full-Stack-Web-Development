@@ -38,9 +38,8 @@
 
   <div fxFlex fxFlexOffset="20px" class="form-size">
       <h3>Send us your Feedback</h3>
-      <p>{{ feedbackForm.value | json }} {{ feedbackForm.status | json }}</p>
 
-      <form novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+      <form novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" [hidden]="submitFlag" [@expand]>
           <p>
             <mat-form-field class="half-width"
              dividerColor="{{(formErrors.firstname) ? 'warn' : 'primary'}}">
@@ -96,5 +95,21 @@
           </p>
           <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="feedbackForm.invalid">Submit</button>
         </form>
+
+    <div [hidden]="(! submitFlag) || confirmFlag" [@expand]>
+        <mat-spinner></mat-spinner><h4>Submitting . . . Please Wait</h4>
     </div>
+    <div *ngIf="feedbackConfirm" [hidden]="(! submitFlag) || (! confirmFlag)" [@expand]>
+      <mat-list>
+        <h3>Your submission:</h3>
+        <mat-list-item matLine>First name: {{feedbackConfirm.firstname}}</mat-list-item>
+        <mat-list-item matLine>Last name: {{feedbackConfirm.lastname}}</mat-list-item>
+        <mat-list-item matLine>Tel. number: {{feedbackConfirm.telnum}}</mat-list-item>
+        <mat-list-item matLine>Email: {{feedbackConfirm.email}}</mat-list-item>
+        <mat-list-item matLine>Contact you?: {{feedbackConfirm.agree}}</mat-list-item>
+        <mat-list-item matLine>How?: {{feedbackConfirm.contacttype}}</mat-list-item>
+        <mat-list-item matLine>Feedback: {{feedbackConfirm.message}}</mat-list-item>
+      </mat-list>
+    </div>
+  </div>
 </div>

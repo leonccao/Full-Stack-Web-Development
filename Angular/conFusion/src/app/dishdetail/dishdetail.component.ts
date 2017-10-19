@@ -29,7 +29,6 @@ export class DishdetailComponent implements OnInit {
   dish: Dish;
   dishcopy = null;
   dishIds: number[];
-  dateTmp: string;
   prev: number;
   next: number;
   commentForm: FormGroup;
@@ -95,10 +94,8 @@ export class DishdetailComponent implements OnInit {
     this.comment = this.commentForm.value;
     const date = new Date();
     this.comment.date = date.toISOString();
-    // this.dishcopy.comments.push(this.comment);
-    // this.dishcopy.save().subscribe(dish => { this.dish = dish; console.log(this.dish); });
-    this.dish.comments.push(this.comment);
-    // this.dishcopy.save().subscribe(dish => { this.dish = dish; console.log(this.dish); });
+    this.dishcopy.comments.push(this.comment);
+    this.dishcopy.save().subscribe(dish => { this.dish = dish; console.log(this.dish); });
     console.log(this.comment);
     this.commentForm.reset({
       rating: 5,
