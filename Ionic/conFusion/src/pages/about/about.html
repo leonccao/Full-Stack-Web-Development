@@ -1,0 +1,103 @@
+<!--
+  Generated template for the AboutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>About Us</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+      <ion-card-header class="card-title">
+        Location Information
+      </ion-card-header>
+      <ion-card-content>
+        <div class="card-text">
+          121, Clear Water Bay Road <br/>
+          Clear Water Bay, Kowloon <br/>
+          HONG KONG
+        </div>
+        <ion-row>
+          <ion-icon name="call"></ion-icon>
+          <div class="card-info">: +852 1234 5678</div>
+        </ion-row>
+        <ion-row>
+          <ion-icon name="print"></ion-icon>
+          <div class="card-info">: +852 8765 4321</div>
+        </ion-row>
+        <ion-row>
+          <ion-icon name="mail"></ion-icon>
+          <div class="card-info">: confusion@food.net</div>
+        </ion-row>
+      </ion-card-content>
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="call"></ion-icon>
+            <div>CALL</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="mail"></ion-icon>
+            <div>EMAIL</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header class="card-title">
+          Our History
+        </ion-card-header>
+        <ion-card-content>
+          <div class="card-text" text-wrap>
+            Started in 2010, Ristorante con Fusion quickly established itself as a culinary icon par excellence in Hong Kong. With its unique brand of world fusion cuisine that can be found nowhere else, it enjoys patronage from the A-list clientele in Hong Kong.  Featuring four of the best three-star Michelin chefs in the world, you never know what will arrive on your plate the next time you visit us.<br/>
+            The restaurant traces its humble beginnings to The Frying Pan, a successful chain started by our CEO, Mr. Peter Pan, that featured for the first time the world's best cuisines in a pan.
+          </div>
+        </ion-card-content>
+    </ion-card>
+
+    <div *ngIf="leaders">
+      <ion-card>
+          <ion-card-header class="card-title">
+            Corporate Leadership
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <div *ngFor="let leader of leaders">
+                <hr/>
+                <ion-item>
+                  <ion-avatar item-start>
+                    <img src="{{BaseURL + leader.image}}">
+                  </ion-avatar>
+                  <h3>{{leader.name}}</h3>
+                  <h4>{{leader.designation}}</h4>
+                </ion-item>
+                <ion-item>
+                  <p text-wrap class="item-text">{{leader.description}}</p>
+                </ion-item>
+              </div>
+            </ion-list>
+          </ion-card-content>
+      </ion-card>
+    </div>
+    <div [hidden]="leaders || errMess">
+      <ion-spinner></ion-spinner>
+      <h4>Loading . . . Please Wait</h4>
+    </div>
+    <div *ngIf="errMess">
+      <h2>Error</h2>
+      <h4>{{errMess}}</h4>
+    </div>
+</ion-content>
