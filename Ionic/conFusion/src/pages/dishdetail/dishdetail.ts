@@ -1,8 +1,10 @@
 import { Component, Inject } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, ModalController } from 'ionic-angular';
 import { Dish } from '../../shared/dish';
 import { Comment } from '../../shared/comment';
 import { FavoriteProvider } from '../../providers/favorite/favorite';
+import { Platform, ActionSheetController } from 'ionic-angular';
+import { CommentPage } from '../../pages/comment/comment';
 
 /**
  * Generated class for the DishdetailPage page.
@@ -25,7 +27,10 @@ export class DishdetailPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     @Inject('BaseURL') private BaseURL,
     private favoriteservice: FavoriteProvider,
-    private toastCtrl: ToastController) {
+    private toastCtrl: ToastController,
+    private platform: Platform,
+    private actionsheetCtrl: ActionSheetController,
+    private modalctrl: ModalController) {
       this.dish = navParams.get('dish');
       this.favorite = favoriteservice.isFavorite(this.dish.id);
       this.numcomments = this.dish.comments.length;
@@ -45,5 +50,40 @@ export class DishdetailPage {
       message: 'Dish ' + this.dish.id + ' added as favorite successfully',
       position: 'middle',
       duration: 3000}).present();
+  }
+
+  openMenu() {
+    let actionSheet = this.actionsheetCtrl.create({
+      title: 'Dish Detail',
+      cssClass: 'action-sheets-basic-page',
+      buttons: [
+        {
+          text: 'Add to Favorties',
+          handler: () => {
+            this.addToFavorites();
+          }
+        },
+        {
+          text: 'Add a Comment',
+          handler: () => {
+            this.openModal();
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+
+  openModal() {
+    let modal = this.modalctrl.create(CommentPage);
+    modal.present();
+    modal.onDidDismiss((addComment) => {
+      if (addComment)
+        this.dish.comments.push(addComment);
+      });
   }
 }

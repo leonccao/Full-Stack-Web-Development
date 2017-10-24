@@ -1,13 +1,17 @@
 <ion-header>
 
-    <ion-navbar color="primary">
-      <ion-title>Dish Details</ion-title>
-    </ion-navbar>
+  <ion-navbar color="primary">
+    <ion-title>Dish Details</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openMenu()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
 
-  </ion-header>
 
-
-  <ion-content padding>
+<ion-content padding>
   <ion-card *ngIf="dish">
     <img src="{{BaseURL + dish.image}}"/>
     <ion-card-content>
