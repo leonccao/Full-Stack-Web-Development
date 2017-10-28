@@ -15,4 +15,43 @@
 
 
 <ion-content padding>
+
+    <ion-card>
+        <ion-card-header class="card-title">
+          Location Information
+        </ion-card-header>
+        <ion-card-content>
+          <div class="card-text">
+            121, Clear Water Bay Road <br/>
+            Clear Water Bay, Kowloon <br/>
+            HONG KONG
+          </div>
+          <ion-row>
+            <ion-icon name="call"></ion-icon>
+            <div class="card-info">: +852 1234 5678</div>
+          </ion-row>
+          <ion-row>
+            <ion-icon name="print"></ion-icon>
+            <div class="card-info">: +852 8765 4321</div>
+          </ion-row>
+          <ion-row>
+            <ion-icon name="mail"></ion-icon>
+            <div class="card-info">: confusion@food.net</div>
+          </ion-row>
+        </ion-card-content>
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="call"></ion-icon>
+              <div>CALL</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small (click)="sendEmail()">
+              <ion-icon name="mail"></ion-icon>
+              <div>EMAIL</div>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
 </ion-content>
