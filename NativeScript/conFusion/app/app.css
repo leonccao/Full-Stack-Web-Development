@@ -9,4 +9,42 @@ In many cases you may want to use the NativeScript core theme instead
 of writing your own CSS rules. For a full list of class names in the theme
 refer to http://docs.nativescript.org/ui/theme.
 */
-@import 'nativescript-theme-core/css/core.light.css';
+@import 'nativescript-theme-core/css/purple.css';
+
+.border {
+    border-width: 1;
+    border-color: #9f9f9f;
+    border-radius: 5;
+}
+
+.no-border {
+    border-width: 0;
+}
+
+.sidedrawer-left {
+    background-color: #D1C4E9;
+}
+
+.sidedrawer-left .sidedrawer-header {
+    background-color: #512DA8;
+}
+
+.sidedrawer-left .sidedrawer-header .sidedrawer-header-image {
+    background-color: #512DA8;
+    margin: 10;
+}
+
+.sidedrawer-left .sidedrawer-header .sidedrawer-header-brand {
+    color: #ffffff;
+    font-size: 30;
+}
+
+.sidedrawer-left .sidedrawer-content .sidedrawer-list-item {
+    color: black;
+}
+
+.sidedrawer-left .sidedrawer-content .sidedrawer-list-item .sidedrawer-list-item-text {
+    font-size: 20;
+    color: black;
+    border-width: 0;
+}

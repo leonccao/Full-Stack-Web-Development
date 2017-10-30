@@ -1,0 +1,11 @@
+<GridLayout class="sidedrawer-header" rows="auto" columns="100, *">
+    <Image row="0" col="0" src="~/images/logo.png" class="sidedrawer-header-image"></Image>
+    <Label row="0" col="1" text="Ristorante Con Fusion" class="sidedrawer-header-brand" textWrap="true"></Label>
+</GridLayout>
+<StackLayout class="sidedrawer-content" orientation="vertical">
+<GridLayout class="sidedrawer-list-item" rows="*" columns="*"
+             orientation="horizontal"
+             [nsRouterLink]="['/menu']" clearHistory="true">
+    <Label row="0" col="0" class="sidedrawer-list-item-text" text="Menu"></Label>
+</GridLayout>
+</StackLayout>
