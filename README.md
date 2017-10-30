@@ -33,3 +33,19 @@ There are three parts in website:
 ![](https://i.imgur.com/jIqCE9F.jpg)
 
 Project builds a website for a fictional restaurant: conFusion. This website is based on Angular.
+
+---
+
+### 3. Multiplatform Mobile App Development with Web Technologies: Ionic and Cordova
+
+![](https://i.imgur.com/19XtgAk.jpg)
+
+Project builds a hybrid app for android system: conFusion. This app is based on Ionic and Cordova.
+
+---
+
+### 4. Multiplatform Mobile App Development with NativeScript
+
+![](https://i.imgur.com/FjeNZg3.jpg)
+
+Project builds a hybrid app for android system: conFusion. This app is based on NativeScript.
