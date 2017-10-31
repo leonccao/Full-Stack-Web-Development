@@ -19,7 +19,7 @@ export class LeaderService {
   constructor(public http: Http,
               private processHTTPMsgService: ProcessHTTPMsgService) { }
 
-  getPromotions(): Observable<Leader[]> {
+  getLeaders(): Observable<Leader[]> {
     return this.http.get(baseURL + 'leaders')
                     .map(res => { return this.processHTTPMsgService.extractData(res); })
                     .catch(error => { return this.processHTTPMsgService.handleError(error); });

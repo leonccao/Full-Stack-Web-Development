@@ -9,7 +9,17 @@
   </GridLayout>
   <GridLayout class="sidedrawer-list-item" rows="*" columns="*"
     orientation="horizontal"
+    [nsRouterLink]="['/about']" clearHistory="true">
+      <Label row="0" col="0" class="sidedrawer-list-item-text" text="About Us"></Label>
+  </GridLayout>
+  <GridLayout class="sidedrawer-list-item" rows="*" columns="*"
+    orientation="horizontal"
     [nsRouterLink]="['/menu']" clearHistory="true">
       <Label row="0" col="0" class="sidedrawer-list-item-text" text="Menu"></Label>
+  </GridLayout>
+  <GridLayout class="sidedrawer-list-item" rows="*" columns="*"
+    orientation="horizontal"
+    [nsRouterLink]="['/contact']" clearHistory="true">
+      <Label row="0" col="0" class="sidedrawer-list-item-text" text="Contact Us"></Label>
   </GridLayout>
 </StackLayout>

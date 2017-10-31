@@ -11,6 +11,11 @@ refer to http://docs.nativescript.org/ui/theme.
 */
 @import 'nativescript-theme-core/css/purple.css';
 
+.bold {
+    font-weight: 700;
+    color: #000000;
+}
+
 .border {
     border-width: 1;
     border-color: #9f9f9f;
