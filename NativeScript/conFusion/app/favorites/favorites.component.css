@@ -1,0 +1,41 @@
+.listItemStackLayout {
+    background-color: white;
+    padding: 10;
+}
+
+.labelName {
+    font-size: 20;
+    font-weight: bold;
+    margin-bottom: 8;
+    margin-left: 16;
+}
+
+.labelTitle {
+    font-size: 14;
+    font-weight: bold;
+}
+
+.labelText {
+    font-size: 12;
+    margin-left: 16;
+}
+
+.markViewStackLayout {
+    background-color: blue;
+    padding: 16;
+}
+
+.deleteViewStackLayout {
+    background-color: red;
+    padding: 16;
+}
+
+.listItemSwipeGridLayout {
+    background-color: white;
+}
+
+.swipetemplateLabel {
+    size: 20;
+    font-size: 28;
+    color: white;
+}

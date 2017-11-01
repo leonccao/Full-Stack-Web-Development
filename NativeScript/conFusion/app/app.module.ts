@@ -3,14 +3,14 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
-
+import { NativeScriptUIListViewModule } from "nativescript-telerik-ui/listview/angular";
 
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-
+import { FavoritesComponent } from './favorites/favorites.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -38,7 +38,8 @@ import { baseURL } from './shared/baseurl';
         NativeScriptUISideDrawerModule,
         TNSFontIconModule.forRoot({
             'fa': './fonts/font-awesome.min.css'
-        })
+        }),
+        NativeScriptUIListViewModule
     ],
     declarations: [
         AppComponent,
@@ -47,7 +48,8 @@ import { baseURL } from './shared/baseurl';
         DrawerComponent,
         HomeComponent,
         AboutComponent,
-        ContactComponent
+        ContactComponent,
+        FavoritesComponent
     ],
     providers: [
         {provide: 'BaseURL', useValue: baseURL},

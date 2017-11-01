@@ -1,0 +1,46 @@
+<ActionBar title="My Favorites" class="action-bar">
+</ActionBar>
+<RadSideDrawer #drawerComponent tkToggleNavButton showOverNavigation="true">
+    <ScrollView tkDrawerContent class="sidedrawer-left">
+        <StackLayout horizontalAlign="left">
+            <drawer-content></drawer-content>
+        </StackLayout>
+    </ScrollView>
+    <StackLayout tkMainContent class="page">
+        <RadListView #myListView [items]="favorites" *ngIf="favorites"
+            selectionBehavior="none" (itemSwipeProgressEnded)="onSwipeCellFinished($event)"
+            (itemSwipeProgressStarted)="onSwipeCellStarted($event)"
+            (itemSwipeProgressChanged)="onCellSwiping($event)"
+            swipeActions="true">
+            <ListViewLinearLayout tkListViewLayout scrollDirection="vertical"
+                itemInsertAnimation="Default" itemDeleteAnimation="Default">
+            </ListViewLinearLayout>
+            <ng-template tkListItemTemplate let-item="item">
+                <StackLayout orientation="horizontal" class="listItemStackLayout">
+                    <Image row="0" col="0" rowSpan="2" height="60" width="60"
+                        [src]="BaseURL + item.image" class="thumb p-16"></Image>
+                    <GridLayout rows="auto *" columns="*">
+                        <Label row="0" col="0" [text]="item.name" class="labelName"></Label>
+                        <Label row="1" col="0" [text]="item.description" class="labelText"></Label>
+                    </GridLayout>
+                </StackLayout>
+            </ng-template>
+            <GridLayout *tkListItemSwipeTemplate columns="auto, * , auto" class="listItemSwipeGridLayout">
+                <StackLayout id="mark-view" class="markViewStackLayout" col="0"
+                 (tap)="onLeftSwipeClick($event)">
+                    <Label text="&#xf08d;" class="swipetemplateLabel fa"
+                        verticalAlignment="center" horizontalAlignment="center"></Label>
+                </StackLayout>
+                <StackLayout id="delete-view" class="deleteViewStackLayout" col="2"
+                 (tap)="onRightSwipeClick($event)">
+                    <Label text="&#xf014;" class="swipetemplateLabel fa"
+                        verticalAlignment="center" horizontalAlignment="center"></Label>
+                </StackLayout>
+            </GridLayout>
+        </RadListView>
+        <ActivityIndicator busy="true" *ngIf="!(favorites || errMess)" width="50"
+            height="50" class="activity-indicator"></ActivityIndicator>
+        <Label *ngIf="errMess" [text]="'Error: ' + errMess"></Label>
+
+    </StackLayout>
+</RadSideDrawer>
