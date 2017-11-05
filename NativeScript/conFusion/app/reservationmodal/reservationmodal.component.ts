@@ -27,7 +27,6 @@ export class ReservationModalComponent implements OnInit {
     }
 
     ngOnInit() {
-
         if (this.isDateTime) {
             let datePicker: DatePicker = <DatePicker>this.page.getViewById<DatePicker>('datePicker');
 

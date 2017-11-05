@@ -15,6 +15,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ReservationModalComponent } from "./reservationmodal/reservationmodal.component";
+import { CommentComponent } from './comment/comment.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -57,9 +58,13 @@ import { baseURL } from './shared/baseurl';
         ContactComponent,
         FavoritesComponent,
         ReservationComponent,
-        ReservationModalComponent
+        ReservationModalComponent,
+        CommentComponent
     ],
-    entryComponents: [ReservationModalComponent],
+    entryComponents: [
+        ReservationModalComponent,
+        CommentComponent
+    ],
     providers: [
         {provide: 'BaseURL', useValue: baseURL},
         DishService,

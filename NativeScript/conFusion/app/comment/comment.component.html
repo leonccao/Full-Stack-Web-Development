@@ -1,0 +1,23 @@
+<ActionBar title="Dish Details" class="action-bar">
+    <NavigationButton android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+</ActionBar>
+<ScrollView orientation="vertical" tkMainContent class="page">
+    <GridLayout class="m-5" rows="auto auto auto auto" columns="*, *" [formGroup]="commentForm">
+        <Label class="h3 m-15" row="0" col="0" text="Name" textWrap="true"></Label>
+        <TextField class="input input-border" id="author"
+            hint="Your Name" [text]=''
+            (textChange)="onAuthorChange($event)"
+            row="0" col="1" formControlName="author"></TextField>
+        <Label class="h3 m-15" row="1" col="0" text="Rating" textWrap="true"></Label>
+        <Slider class="m-5" row="1" col="1" value="5" (valueChange)="onRatingChange($event)" 
+            minValue="1" maxValue="5"
+            formControlName="rating"></Slider>
+        <Label class="h3 m-15" row="2" col="0" text="Comment" textWrap="true"></Label>
+        <TextField class="input input-border" id="comment"
+            hint="Your Comment" [text]=''
+            (textChange)="onCommentChange($event)"
+            row="2" col="1" formControlName="comment"></TextField>
+        <Button class="btn btn-primary btn-active m-15" row="3" col="0"
+            text="Submit" (tap)="onSubmit()"></Button>
+    </GridLayout>
+</ScrollView>

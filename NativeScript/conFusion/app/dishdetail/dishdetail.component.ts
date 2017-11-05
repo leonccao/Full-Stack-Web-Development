@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewContainerRef } from '@angular/core';
 import { Dish } from '../shared/dish';
 import { Comment } from '../shared/comment';
 import { DishService } from '../services/dish.service';
@@ -7,21 +7,23 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import { FavoriteService } from '../services/favorite.service';
 import { TNSFontIconService } from 'nativescript-ngx-fonticon';
 import { Toasty } from 'nativescript-toasty';
+import { action } from "ui/dialogs";
+import { ModalDialogService, ModalDialogOptions } from "nativescript-angular/modal-dialog";
+import { CommentComponent } from '../comment/comment.component';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-dishdetail',
     moduleId: module.id,
-  templateUrl: './dishdetail.component.html',
-  styleUrls: ['./dishdetail.component.css']
+  templateUrl: './dishdetail.component.html'
 })
 export class DishdetailComponent implements OnInit {
 
   dish: Dish;
-  comment: Comment;
   errMess: string;
   avgstars: string;
   numcomments: number;
+  commentListHeight: number;
   favorite: boolean = false;
 
   constructor(private favoriteservice: FavoriteService,
@@ -29,6 +31,8 @@ export class DishdetailComponent implements OnInit {
     private dishservice: DishService,
     private route: ActivatedRoute,
     private routerExtensions: RouterExtensions,
+    private modalService: ModalDialogService, 
+    private vcRef: ViewContainerRef,
     @Inject('BaseURL') private BaseURL) { }
 
     ngOnInit() {
@@ -36,6 +40,7 @@ export class DishdetailComponent implements OnInit {
         .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
         .subscribe(dish => { 
           this.dish = dish;
+          this.commentListHeight = this.dish.comments.length * 100;
           this.favorite = this.favoriteservice.isFavorite(this.dish.id);
           this.numcomments = this.dish.comments.length;
       
@@ -62,5 +67,38 @@ export class DishdetailComponent implements OnInit {
 
   goBack(): void {
     this.routerExtensions.back();
+  }
+
+  createAction() {
+    let options = {
+      title: "What to do ?",
+      cancelButtonText: "Cancel",
+      actions: ["Add/Delete a Favorite", "Add comment"]
+    };
+    action(options).then(result => {
+      if (result === "Add/Delete a Favorite") {
+        this.toggleFavorites();
+      } else {  
+        console.log('Adding comment');
+        this.createModalView();
+      }
+    });
+  }
+
+  createModalView() {
+    let options: ModalDialogOptions = {
+        viewContainerRef: this.vcRef,
+        fullscreen: false
+    };
+    
+    this.modalService.showModal(CommentComponent, options)
+        .then((result: Comment) => {
+          this.dish.comments.push(result);
+          this.commentListHeight += 100;
+          this.numcomments = this.dish.comments.length;
+          let total = 0;
+          this.dish.comments.forEach((comment: Comment) => total += comment.rating);
+          this.avgstars = (total/this.numcomments).toFixed(2);
+        });
   }
 }
