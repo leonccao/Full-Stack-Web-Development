@@ -1,0 +1,12 @@
+<StackLayout class="modal-view-style">
+    <StackLayout [visibility]="!(isDateTime) ? 'visible': 'collapsed'">
+            <ListPicker id="guestPicker" [items]="guestArray" selectedIndex="0"
+                class="p-15"></ListPicker>
+    </StackLayout>
+    <StackLayout [visibility]="isDateTime ? 'visible': 'collapsed'">
+        <DatePicker id="datePicker"></DatePicker>
+        <TimePicker id="timePicker"></TimePicker>
+    </StackLayout>
+    <Button class="btn btn-primary btn-active" text="submit"
+        (tap)="submit()"></Button>
+</StackLayout>
