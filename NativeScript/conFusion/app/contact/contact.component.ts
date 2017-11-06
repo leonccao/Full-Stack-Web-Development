@@ -5,8 +5,7 @@ import { DrawerPage } from '../shared/drawer/drawer.page';
 @Component({
   selector: 'app-contact',
     moduleId: module.id,
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  templateUrl: './contact.component.html'
 })
 export class ContactComponent extends DrawerPage implements OnInit {
 

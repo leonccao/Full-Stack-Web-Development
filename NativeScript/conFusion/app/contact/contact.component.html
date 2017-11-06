@@ -1,4 +1,5 @@
 <ActionBar title="Contact Us" class="action-bar">
+    <NavigationButton text="Menu" icon="res://ic_drawer" (tap)="openDrawer()"></NavigationButton>
 </ActionBar>
 <RadSideDrawer #drawerComponent tkToggleNavButton showOverNavigation="true">
   <ScrollView tkDrawerContent class="sidedrawer-left">
@@ -7,7 +8,7 @@
     </StackLayout>
   </ScrollView>
   <StackLayout tkMainContent class="page">
-    <StackLayout row="0" class="p-10 border"> 
+    <StackLayout row="0" class="p-10 m-15 border"> 
       <Label class="h2" [text]="'Contact Information'"></Label>
         <StackLayout> 
           <Label class="body" [text]="'121, Clear Water Bay Road'"></Label>   
