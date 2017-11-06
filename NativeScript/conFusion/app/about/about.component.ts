@@ -7,8 +7,7 @@ import { DrawerPage } from '../shared/drawer/drawer.page';
 @Component({
   selector: 'app-about',
     moduleId: module.id,
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  templateUrl: './about.component.html'
 })
 export class AboutComponent extends DrawerPage implements OnInit {
 

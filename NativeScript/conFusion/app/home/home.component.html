@@ -6,42 +6,46 @@
       <drawer-content></drawer-content>
     </StackLayout>
   </ScrollView>
-  <ScrollView orientation="vertical" tkMainContent class="page">
-    <GridLayout class="m-5" rows="auto auto auto">
-      <StackLayout row="0">
-        <StackLayout class="p-10 border" *ngIf="dish"> 
-          <Image [src]="BaseURL + dish.image"></Image>
-          <StackLayout>
-            <Label class="h2" [text]="dish.name"></Label>
-            <Label class="body" [text]="dish.description" textWrap="true"></Label>      
-          </StackLayout>
-        </StackLayout>
+  <StackLayout tkMainContent (swipe)="onSwipe($event)">
+    <GridLayout horizontalAlignment="center" verticalAlignment="top" rows="*" columns="*" height="95%">
+        <GridLayout id="leftCard" row="0" margin="15" rows="* auto" columns="*" 
+            *ngIf="dish" [visibility]="showLeftCard ? 'visible' : 'collapsed'" class="border"> 
+            <Image row="0" stretch="aspectFill" [src]="BaseURL + dish.image"></Image>
+            <StackLayout padding="10" row="1">
+                <Label class="h2" [text]="dish.name"></Label>
+                <Label class="body" [text]="dish.description" textWrap="true"></Label>      
+            </StackLayout>
+        </GridLayout>
         <ActivityIndicator busy="true"  *ngIf="!(dish || dishErrMess)" width="50" height="50" class="activity-indicator"></ActivityIndicator>
         <Label *ngIf="dishErrMess" [text]="'Error: ' + dishErrMess"></Label>
-      </StackLayout>
-      <StackLayout row="1">
-        <StackLayout class="p-10 border" *ngIf="promotion"> 
-          <Image [src]="BaseURL + promotion.image"></Image>
-          <StackLayout>
-            <Label class="h2" [text]="promotion.name"></Label>
-            <Label class="body" [text]="promotion.description" textWrap="true"></Label>      
-          </StackLayout>
-        </StackLayout>
+
+        <GridLayout id="middleCard" row="0" margin="15" rows="* auto" columns="*"  
+            *ngIf="promotion" [visibility]="showMiddleCard ? 'visible' : 'collapsed'" class="border"> 
+            <Image row="0" stretch="aspectFill" [src]="BaseURL + promotion.image"></Image>
+            <StackLayout padding="10" row="1">
+                <Label class="h2" [text]="promotion.name"></Label>
+                <Label class="body" [text]="promotion.description" textWrap="true"></Label>      
+            </StackLayout>
+        </GridLayout>
         <ActivityIndicator busy="true"  *ngIf="!(promotion || promoErrMess)" width="50" height="50" class="activity-indicator"></ActivityIndicator>
         <Label *ngIf="promoErrMess" [text]="'Error: ' + promoErrMess"></Label>
-      </StackLayout>
-      <StackLayout row="2">
-        <StackLayout class="p-10 border" *ngIf="leader"> 
-          <Image [src]="BaseURL + leader.image"></Image>
-          <StackLayout>
-            <Label class="h2" [text]="leader.name"></Label>
-            <Label class="h3" [text]="leader.designation"></Label>
-            <Label class="body" [text]="leader.description" textWrap="true"></Label>      
-          </StackLayout>
-        </StackLayout>
+
+        <GridLayout id="rightCard" row="0" margin="15" rows="* auto" columns="*" 
+            *ngIf="leader" [visibility]="showRightCard ? 'visible' : 'collapsed'" class="border"> 
+            <Image row="0" stretch="aspectFill" [src]="BaseURL + leader.image"></Image>
+            <StackLayout padding="10" row="1">
+                <Label class="h2" [text]="leader.name"></Label>
+                <Label class="h3" [text]="leader.designation"></Label>
+                <Label class="body" [text]="leader.description" textWrap="true"></Label>      
+            </StackLayout>
+        </GridLayout>
         <ActivityIndicator busy="true"  *ngIf="!(leader || leaderErrMess)" width="50" height="50" class="activity-indicator"></ActivityIndicator>
         <Label *ngIf="leaderErrMess" [text]="'Error: ' + leaderErrMess"></Label>
-      </StackLayout>
     </GridLayout>
-  </ScrollView>
+    <StackLayout horizontalAlignment="center" orientation="horizontal">
+        <Label class="fa" [text]="(showLeftCard ? 'fa-circle' : 'fa-circle-o') | fonticon"></Label>
+        <Label class="m-l-15 fa" [text]="(showMiddleCard ? 'fa-circle' : 'fa-circle-o') | fonticon"></Label>
+        <Label class="m-l-15 fa" [text]="(showRightCard ? 'fa-circle' : 'fa-circle-o') | fonticon"></Label>
+    </StackLayout>
+  </StackLayout>
 </RadSideDrawer>
