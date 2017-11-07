@@ -21,6 +21,7 @@
     "font-awesome": "^4.7.0",
     "nativescript-angular": "~4.4.0",
     "nativescript-couchbase": "^1.0.18",
+    "nativescript-local-notifications": "^2.0.0",
     "nativescript-ngx-fonticon": "^3.0.0",
     "nativescript-telerik-ui": "^3.1.4",
     "nativescript-theme-core": "~1.0.2",
