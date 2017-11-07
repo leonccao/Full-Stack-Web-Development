@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { FavoriteService } from '../services/favorite.service';
 import { Dish } from '../shared/dish';
-import { ListViewEventData, RadListView } from 'nativescript-telerik-ui/listview';
-import { RadListViewComponent } from 'nativescript-telerik-ui/listview/angular';
+import { ListViewEventData, RadListView } from 'nativescript-pro-ui/listview';
+import { RadListViewComponent } from 'nativescript-pro-ui/listview/angular';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
 import { DrawerPage } from '../shared/drawer/drawer.page';
 import { View } from 'ui/core/view';

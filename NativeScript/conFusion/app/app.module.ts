@@ -3,7 +3,7 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
-import { NativeScriptUIListViewModule } from "nativescript-telerik-ui/listview/angular";
+import { NativeScriptUIListViewModule } from "nativescript-pro-ui/listview/angular";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -30,7 +30,7 @@ import { LeaderService } from './services/leader.service';
 import { FavoriteService } from './services/favorite.service';
 import { CouchbaseService } from './services/couchbase.service';
 import { PlatformService } from './services/platform.service';
-import { NativeScriptUISideDrawerModule } from "nativescript-telerik-ui/sidedrawer/angular";
+import { NativeScriptUISideDrawerModule } from "nativescript-pro-ui/sidedrawer/angular";
 import { DrawerComponent } from "./shared/drawer/drawer.component";
 
 import { baseURL } from './shared/baseurl';
