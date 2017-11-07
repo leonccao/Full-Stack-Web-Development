@@ -1,0 +1,81 @@
+<ActionBar title="login" class="action-bar">
+</ActionBar>
+<TabView [(ngModel)]="tabSelectedIndex">
+    <StackLayout *tabItem="{title: 'Login'}">
+        <StackLayout class="form">
+            <GridLayout class="input-field input-sides" rows="auto, auto, auto, auto, auto" columns="*, *"
+                [formGroup]="loginForm">
+                <Image row="0" colSpan="2" src="res://rcflogo"
+                    height="100" width="100"></Image>
+
+                <Label class="label font-weight-bold" row="1" col="0"
+                    text="Username"></Label>
+                <TextField class="input input-border right" id="userName" hint="Username"
+                    [text]='' row="1" col="1" formControlName="userName"></TextField>
+
+                <Label class="label font-weight-bold" row="2" col="0"
+                    text="Password"></Label>
+                <TextField class="input input-border right" id="password" secure="true" hint="Password"
+                    [text]='' row="2" col="1" formControlName="password"></TextField>
+
+                <Button class="btn btn-primary m-15" row="3" colSpan="2"
+                    text="Submit" (tap)="onLoginSubmit()"></Button>
+                <Button row="4" colSpan="2" text="Register"
+                    class="btn btn-rounded-sm btn-outline no-border" (tap)="register()"></Button>
+            </GridLayout>
+        </StackLayout>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Register'}">
+        <StackLayout class="form">
+            <GridLayout rows="auto, auto, auto" columns="*">
+                <Label class="h3 font-weight-bold" row="0" col="0"
+                    text="Your Picture"></Label>
+                <Image id="myPicture" row="1" col="0" src="res://rcflogo"
+                    height="100" width="100"></Image>
+                <GridLayout row="2" col="0" orientation="horizontal"
+                    rows="*" columns="*, *" class="m-t-10">
+                    <Button row="0" col="0" text="Take Picture"
+                        class="btn btn-rounded-sm btn-outline" (tap)="takePicture()"></Button>
+                    <Button row="0" col="1" text="Select Image"
+                        class="btn btn-rounded-sm btn-outline"></Button>
+                </GridLayout>
+            </GridLayout>
+            <GridLayout class="input-field input-sides" rows="auto, auto, auto, auto, auto, auto, auto" columns="*, *"
+                [formGroup]="registerForm">
+
+                <Label class="label font-weight-bold" row="0" col="0"
+                    text="First Name"></Label>
+                <TextField class="input input-border right" id="firstName" hint="First Name"
+                    [text]='' row="0" col="1" formControlName="firstName"></TextField>
+
+                <Label class="label font-weight-bold" row="1" col="0"
+                    text="Last Name"></Label>
+                <TextField class="input input-border right" id="lastName" hint="Last Name"
+                    [text]='' row="1" col="1" formControlName="lastName"></TextField>
+
+                <Label class="label font-weight-bold" row="2" col="0"
+                    text="Username"></Label>
+                <TextField class="input input-border right" id="userName" hint="Username"
+                    [text]='' row="2" col="1" formControlName="userName"></TextField>
+
+                <Label class="label font-weight-bold" row="3" col="0"
+                    text="Password"></Label>
+                <TextField class="input input-border right" id="password" secure="true" hint="Password"
+                    [text]='' row="3" col="1" formControlName="password"></TextField>
+
+                <Label class="label font-weight-bold" row="4" col="0"
+                    text="Tel. Number"></Label>
+                <TextField class="input input-border right" id="telnum" hint="Tel. Number"
+                    [text]='' row="4" col="1" formControlName="telnum"></TextField>
+
+                <Label class="label font-weight-bold" row="5" col="0"
+                    text="Email"></Label>
+                <TextField class="input input-border right" id="email" hint="Email"
+                    [text]='' row="5" col="1" formControlName="email"></TextField>
+
+                <Button class="btn btn-primary m-15" row="6" colSpan="2"
+                    text="Register" (tap)="onRegisterSubmit()"></Button>
+            </GridLayout>
+        </StackLayout>
+    </StackLayout>
+</TabView>

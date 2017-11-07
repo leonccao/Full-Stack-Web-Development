@@ -16,6 +16,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ReservationModalComponent } from "./reservationmodal/reservationmodal.component";
 import { CommentComponent } from './comment/comment.component';
+import { UserAuthComponent } from "./userauth/userauth.component"; 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -28,6 +29,7 @@ import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
 import { FavoriteService } from './services/favorite.service';
 import { CouchbaseService } from './services/couchbase.service';
+import { PlatformService } from './services/platform.service';
 import { NativeScriptUISideDrawerModule } from "nativescript-telerik-ui/sidedrawer/angular";
 import { DrawerComponent } from "./shared/drawer/drawer.component";
 
@@ -60,7 +62,8 @@ import { baseURL } from './shared/baseurl';
         FavoritesComponent,
         ReservationComponent,
         ReservationModalComponent,
-        CommentComponent
+        CommentComponent,
+        UserAuthComponent 
     ],
     entryComponents: [
         ReservationModalComponent,
@@ -73,6 +76,7 @@ import { baseURL } from './shared/baseurl';
         PromotionService,
         LeaderService,
         FavoriteService,
+        PlatformService,
         CouchbaseService
     ],
     schemas: [
