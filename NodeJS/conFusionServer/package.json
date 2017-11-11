@@ -8,13 +8,15 @@
   "dependencies": {
     "bluebird": "^3.5.1",
     "body-parser": "~1.18.2",
-    "cookie-parser": "~1.4.3",
+    "cookie-parser": "^1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
+    "express-session": "^1.15.6",
     "jade": "~1.11.0",
     "mongoose": "^4.13.1",
     "mongoose-currency": "^0.2.0",
     "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "session-file-store": "^1.1.2"
   }
 }
