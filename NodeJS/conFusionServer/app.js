@@ -9,16 +9,13 @@ var FileStore = require('session-file-store')(session);
 var passport = require('passport');
 var authenticate = require('./authenticate');
 var config = require('./config');
-
 var index = require('./routes/index');
 var users = require('./routes/users');
 var dishRouter = require('./routes/dishRouter');
 var promoRouter = require('./routes/promoRouter');
 var leaderRouter = require('./routes/leaderRouter');
-
 const mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
-
+mongoose.Promise = require('bluebird'); 
 const url = config.mongoUrl;
 const connect = mongoose.connect(url, {
     useMongoClient: true,
@@ -48,12 +45,9 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-
 app.use('/', index);
 app.use('/users', users);
-
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/dishes', dishRouter);
 app.use('/promotions', promoRouter);
 app.use('/leaders', leaderRouter);
