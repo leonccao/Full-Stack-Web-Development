@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "Your API Key",
-    authDomain: "Your Auth Domain",
-    databaseURL: "Your Database URL",
-    projectId: "Your Project ID",
-    storageBucket: "Your Storage Bucket",
-    messagingSenderId: "Your Messaging Sender ID"
+    apiKey: 'AIzaSyDzQaU4NbT5tZKYhfbxD65BmBE3nlp6c5I',
+    authDomain: 'confusionserver-b2854.firebaseapp.com',
+    databaseURL: 'https://confusionserver-b2854.firebaseio.com',
+    projectId: 'confusionserver-b2854',
+    storageBucket: 'confusionserver-b2854.appspot.com',
+    messagingSenderId: '284659749687'
   }
 };

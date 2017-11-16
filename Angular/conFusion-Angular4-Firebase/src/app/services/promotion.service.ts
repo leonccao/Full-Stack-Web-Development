@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
 
 import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PromotionService {
@@ -38,6 +40,6 @@ export class PromotionService {
         const _id = action.payload.doc.id;
         return { _id, ...data };
       })[0];
-    }); 
+    });
   }
 }

@@ -4,14 +4,16 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { AuthService } from '../services/auth.service';
 import * as firebase from 'firebase/app';
+
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DishService {
 
   private currentUser: firebase.User = null;
-  
+
   constructor(private afs: AngularFirestore,
     private authService: AuthService ) {
       this.authService.getAuthState()
@@ -53,7 +55,7 @@ export class DishService {
         const _id = action.payload.doc.id;
         return { _id, ...data };
       })[0];
-    });  
+    });
   }
 
   getDishIds(): Observable<String[] | any> {
@@ -67,10 +69,10 @@ export class DishService {
       return this.afs.collection('dishes').doc(dishId).collection('comments')
         .add({
           author: {
-            "_id": this.currentUser.uid, 
+            "_id": this.currentUser.uid,
             "firstname" : this.currentUser.displayName ? this.currentUser.displayName : this.currentUser.email
           },
-          rating: comment.rating, 
+          rating: comment.rating,
           comment: comment.comment,
           createdAt: firebase.firestore.FieldValue.serverTimestamp(),
           updatedAt: firebase.firestore.FieldValue.serverTimestamp()

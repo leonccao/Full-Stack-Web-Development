@@ -6,6 +6,7 @@ import * as firebase from 'firebase/app';
 
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AuthService {
@@ -43,7 +44,7 @@ export class AuthService {
   }
 
   logOut() {
-    this.afAuth.auth.signOut();    
+    this.afAuth.auth.signOut();
   }
 
   googleLogin() {

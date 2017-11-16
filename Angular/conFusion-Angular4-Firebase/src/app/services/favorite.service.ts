@@ -6,15 +6,18 @@ import { AuthService } from '../services/auth.service';
 import * as firebase from 'firebase/app';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
 
+import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class FavoriteService {
 
   userId: string = undefined;
   username: string = undefined;
-  
+
   constructor( private afs: AngularFirestore,
-    private authService: AuthService ) { 
+    private authService: AuthService ) {
     this.authService.getAuthState()
     .subscribe((user) => {
       if (user) {
@@ -33,7 +36,7 @@ export class FavoriteService {
     else
       return Observable.throw(new Error("No User Logged In!"));
   }
-/* 
+/*
   postFavorites(dishids: any) {
     return this.http.post(baseURL + 'favorites/', dishids)
     .catch(error => { return this.processHTTPMsgService.handleError(error); });
@@ -46,16 +49,16 @@ export class FavoriteService {
       .then(doc => {
         return !doc.empty;
       });
-    }    
+    }
     else
       return Promise.resolve(false);
-  } 
+  }
 
   postFavorite(id: string) {
-    if (this.userId)    
+    if (this.userId)
       return this.afs.collection('favorites').add({user: this.userId, dish: id });
     else
-      return Promise.reject(new Error("No User Logged In!"));    
+      return Promise.reject(new Error("No User Logged In!"));
   }
 
   deleteFavorite(id: string): Promise<void> {
@@ -67,7 +70,7 @@ export class FavoriteService {
           return db.doc('favorites/' + doc.id).delete()
         })
       });
-    }    
+    }
     else
       return Promise.reject(new Error("No User Logged In!"));
   }

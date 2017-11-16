@@ -9,6 +9,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { visibility, flyInOut, expand } from '../animations/app.animation';
 
+import 'rxjs/add/operator/switchMap';
+
 @Component({
   selector: 'app-dishdetail',
   templateUrl: './dishdetail.component.html',
@@ -62,16 +64,16 @@ export class DishdetailComponent implements OnInit {
     this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
     this.route.params
       .switchMap((params: Params) => { this.visibility = 'hidden'; return this.dishservice.getDish(params['id']); })
-      .subscribe(dish => { 
+      .subscribe(dish => {
           this.dish = dish;
           this.dishservice.getComments(this.dish._id)
           .subscribe(comments => this.dish.comments = comments);
-          this.setPrevNext(dish._id); 
+          this.setPrevNext(dish._id);
           this.visibility = 'shown';
           this.favoriteService.isFavorite(this.dish._id)
-            .then(value =>{ 
+            .then(value =>{
               this.favorite = value;
-              console.log("Dishdetail favorite ", this.favorite);              
+              console.log("Dishdetail favorite ", this.favorite);
             });
         },
         errmess => this.errMess = <any>errmess);
