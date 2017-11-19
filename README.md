@@ -25,7 +25,7 @@ This project built a multi-platform website of *conFusion* based on **Angular4**
 
 **Json-Server** works here as the server.
 
-## 3. Multiplatform Mobile App Development with Web Technologies: Ionic and Cordova ![](https://img.shields.io/badge/NodeJS-6.11.4-brightgreen.svg) ![](https://img.shields.io/badge/AngularJS-4.3.0-red.svg) ![](https://img.shields.io/badge/Ionic-3.9.2-blue.svg) ![](https://img.shields.io/badge/Cordova-7.0.0-lightgray.svg)
+## 3. Multiplatform Mobile App Development with Web Technologies: Ionic and Cordova ![](https://img.shields.io/badge/Ionic-3.9.2-blue.svg) ![](https://img.shields.io/badge/Cordova-7.0.0-lightgray.svg)
 
 ![](https://i.imgur.com/19XtgAk.jpg)
 
@@ -36,7 +36,7 @@ This project built a hybrid app of *conFusion* based on **Ionic** and **Cordova*
 
 **Json-Server** works here as the server.
 
-## 4. Multiplatform Mobile App Development with NativeScript ![](https://img.shields.io/badge/NodeJS-6.11.4-brightgreen.svg) ![](https://img.shields.io/badge/AngularJS-4.3.0-red.svg) ![](https://img.shields.io/badge/NativeScript-5.0.0-blue.svg)
+## 4. Multiplatform Mobile App Development with NativeScript ![](https://img.shields.io/badge/NativeScript-5.0.0-blue.svg)
 
 ![](https://i.imgur.com/FjeNZg3.jpg)
 
@@ -47,7 +47,7 @@ This project built a hybrid app of *conFusion* based on **NativeScript**.
 
 **Json-Server** works here as the server.
 
-## 5. Server-side Development with NodeJS, Express and MongoDB ![](https://img.shields.io/badge/NodeJS-6.11.4-brightgreen.svg) ![](https://img.shields.io/badge/MangoDB-3.6.0-yellowgreen.svg) ![](https://img.shields.io/badge/AngularJS-4.3.0-red.svg) 
+## 5. Server-side Development with NodeJS, Express and MongoDB ![](https://img.shields.io/badge/NodeJS-6.11.4-brightgreen.svg) ![](https://img.shields.io/badge/MangoDB-3.6.0-yellowgreen.svg) 
 
 ![](https://i.imgur.com/wsWqfmd.jpg)
 
