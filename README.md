@@ -17,7 +17,7 @@ Course's homepage [here](https://www.coursera.org/learn/bootstrap-4).
 
 This project built a website of *conFusion* by **Bootstrap4** besides HTML, CSS and Javascript.
 
-**Highlights and Details:**
+### Highlights and Details:
 
 - 
 
@@ -34,6 +34,10 @@ Course's homepage [here](https://www.coursera.org/learn/angular).
 This project built a multi-platform website of *conFusion* based on **Angular4**.
 
 **Json-Server** works here as the server.
+
+### Highlights and Details:
+
+- 
 
 ## 3. Multiplatform Mobile App Development with Web Technologies: Ionic and Cordova 
 
@@ -52,6 +56,10 @@ This project built a hybrid app of *conFusion* based on **Ionic** and **Cordova*
 
 **Json-Server** works here as the server.
 
+### Highlights and Details:
+
+- 
+
 ## 4. Multiplatform Mobile App Development with NativeScript 
 ![](https://img.shields.io/badge/AngularJS-4.3.0-orange.svg?style=flat-square) 
 ![](https://img.shields.io/badge/NodeJS-6.11.4-brightgreen.svg?style=flat-square)
@@ -66,6 +74,10 @@ Course's homepage [here](https://www.coursera.org/learn/nativescript).
 This project built a hybrid app of *conFusion* based on **NativeScript**.
 
 **Json-Server** works here as the server.
+
+### Highlights and Details:
+
+- 
 
 ## 5. Server-side Development with NodeJS, Express and MongoDB 
 ![](https://img.shields.io/badge/AngularJS-4.3.0-orange.svg?style=flat-square) 
@@ -84,3 +96,7 @@ This part includes the server side of the website.
 **NodeJS** respondes all the requests from client side. **Express** is used here for **NodeJS** to operate on **MongoDB**.
 
 **HTTPClient** of **Angular4** are utilized here to integrate the front-end with back-end.
+
+### Highlights and Details:
+
+- 
