@@ -6,12 +6,11 @@ Here are the in-class projects for [*Full Stack Web and Multiplatform Mobile App
 
 This specialization builds a series of websites for a fictional restaurant conFusion based on serveral different platforms and tools.
 
-## 1. Front-End Web UI Frameworks and Tools: Bootstrap 4 
+## 1. Front-End Web UI Frameworks and Tools: Bootstrap 4
 
 ![](https://img.shields.io/badge/Bootstrap-4.0.0-B452CD.svg?style=flat-square)
 
-
-	./Bootstrap
+    ./Bootstrap
 
 Course's homepage [here](https://www.coursera.org/learn/bootstrap-4).
 
@@ -21,10 +20,10 @@ This project built a website of *conFusion* by **Bootstrap4** besides HTML, CSS 
 
 - 
 
-## 2. Front-End JavaScript Frameworks: Angular 
+## 2. Front-End JavaScript Frameworks: Angular
 
-![](https://img.shields.io/badge/AngularJS-4.3.0-orange.svg?style=flat-square)
-![](https://img.shields.io/badge/NodeJS-6.11.4-brightgreen.svg?style=flat-square) 
+![](https://img.shields.io/badge/Angular-4.3.0-orange.svg?style=flat-square)
+![](https://img.shields.io/badge/Node.js-6.11.4-brightgreen.svg?style=flat-square) 
 
 	./Angular/conFusion
 	./json-server
@@ -41,8 +40,8 @@ This project built a multi-platform website of *conFusion* based on **Angular4**
 
 ## 3. Multiplatform Mobile App Development with Web Technologies: Ionic and Cordova 
 
-![](https://img.shields.io/badge/AngularJS-4.3.0-orange.svg?style=flat-square) 
-![](https://img.shields.io/badge/NodeJS-6.11.4-brightgreen.svg?style=flat-square)
+![](https://img.shields.io/badge/Angular-4.3.0-orange.svg?style=flat-square)
+![](https://img.shields.io/badge/Node.js-6.11.4-brightgreen.svg?style=flat-square) 
 ![](https://img.shields.io/badge/Ionic-3.9.2-blue.svg?style=flat-square) 
 ![](https://img.shields.io/badge/Cordova-7.0.0-lightgray.svg?style=flat-square)
 
@@ -61,8 +60,9 @@ This project built a hybrid app of *conFusion* based on **Ionic** and **Cordova*
 - 
 
 ## 4. Multiplatform Mobile App Development with NativeScript 
-![](https://img.shields.io/badge/AngularJS-4.3.0-orange.svg?style=flat-square) 
-![](https://img.shields.io/badge/NodeJS-6.11.4-brightgreen.svg?style=flat-square)
+
+![](https://img.shields.io/badge/Angular-4.3.0-orange.svg?style=flat-square)
+![](https://img.shields.io/badge/Node.js-6.11.4-brightgreen.svg?style=flat-square) 
 ![](https://img.shields.io/badge/NativeScript-5.0.0-blue.svg?style=flat-square)
 
 
@@ -80,9 +80,10 @@ This project built a hybrid app of *conFusion* based on **NativeScript**.
 - 
 
 ## 5. Server-side Development with NodeJS, Express and MongoDB 
-![](https://img.shields.io/badge/AngularJS-4.3.0-orange.svg?style=flat-square) 
+
+![](https://img.shields.io/badge/Angular-4.3.0-orange.svg?style=flat-square)
 ![](https://img.shields.io/badge/MangoDB-3.6.0-yellowgreen.svg?style=flat-square) 
-![](https://img.shields.io/badge/NodeJS-6.11.4-brightgreen.svg?style=flat-square)
+![](https://img.shields.io/badge/Node.js-6.11.4-brightgreen.svg?style=flat-square) 
 
 	./Angular/conFusion-Angular4-Firebase
 	./Angular/conFusion-Angular4
